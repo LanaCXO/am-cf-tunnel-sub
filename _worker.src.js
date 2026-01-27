@@ -1,3 +1,10 @@
+/**
+ * YouTube  : https://youtube.com/@am_clubs
+ * Telegram : https://t.me/am_clubs
+ * GitHub   : https://github.com/amclubs
+ * BLog     : https://amclubss.com
+ */
+
 let id = base64Decode('ZWM4NzJkOGYtNzJiMC00YTA0LWI2MTItMDMyN2Q4NWUxOGVk');
 let uuid;
 let host;
@@ -9,10 +16,10 @@ let socks5Enable = false;
 let parsedSocks5 = {};
 
 let ipLocal = [
-    '',
-    '',
-    '',
-    ''
+    'wto.org:443#youtube.com/@am_clubs 数字套利(视频教程)',
+    'icook.hk#t.me/am_clubs TG群(加入解锁更多节点)',
+    'time.is#github.com/amclubs GitHub仓库(关注查看新功能)',
+    '127.0.0.1:1234#amclubss.com 博客教程(cfnat)'
 ];
 
 const defaultIpUrlTxt = base64Decode('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FtY2x1YnMvYW0tY2YtdHVubmVsL21haW4vZXhhbXBsZS9pcHY0LnR4dA==');
@@ -63,21 +70,21 @@ let nipHost = base64Decode('bmlwLmxmcmVlLm9yZw==');
 let extraIp;
 let extraIpProxy;
 
-// export default {
-//     async fetch(request, env) {
-//         try {
-//             const url = new URL(request.url);
-//             const headers = request.headers;
-//             return await mainHandler({ req: request, url, headers, res: null, env });
-//         } catch (err) {
-//             errorLogs('Worker Error:', err);
-//             return new Response('Worker Error: ' + err.message, { status: 500 });
-//         }
-//     },
-// };
+export default {
+    async fetch(request, env) {
+        try {
+            const url = new URL(request.url);
+            const headers = request.headers;
+            return await mainHandler({ req: request, url, headers, res: null, env });
+        } catch (err) {
+            errorLogs('Worker Error:', err);
+            return new Response('Worker Error: ' + err.message, { status: 500 });
+        }
+    },
+};
 
 // ======= 主逻辑函数（共用） =======
-export async function mainHandler({ req, url, headers, res, env }) {
+async function mainHandler({ req, url, headers, res, env }) {
     const { ENABLE_LOG, ID, UUID, HOST, SOCKS5, IP_URL, PROXYIP, NAT64, NAT64_PREFIX, HOST_REMARK, PROT_TYPE, RANDOW_NUM, SUB_CONFIG, SUB_CONVERTER, NO_TLS, NIP_HOST, EXTRA_IP, EXTRA_IP_PROXY, ENABLE_OPEN } = env || {};
 
     const rawHost = headers.get('host') || headers.get('Host') || 'localhost';
